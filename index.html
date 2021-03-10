@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>CP Helper</title>
 </head>
 
 <body>
@@ -37,10 +37,10 @@
         </div>
     </nav>
 
-    <div class="container bg-danger mw-100 my-4">
+    <div class="container mw-75 my-4">
         <div class="row">
             <div class="col-6">
-                <div class="container bg-light mx-2 my-4">
+                <div class="container mx-2 my-4">
                     <h6>Input</h6>
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
@@ -85,7 +85,78 @@
 
                     </ul>
                 </div>
+                <!-- start creating divs from here -->
+                <form class="row g-3 m-4 border border-dark p-3">
+                    <div class="col-md-6">
+                      <label for="inputEmail4" class="form-label">N Test Cases</label>
+                      <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">N Test Cases Flag</label>
+                        <select id="inputState" class="form-select">
+                          <option selected>Yes</option>
+                          <option>No</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                      <label for="inputAddress" class="form-label">Min value</label>
+                      <input type="text" class="form-control" id="inputAddress" placeholder="min_value">
+                    </div>
+                    <div class="col-6">
+                      <label for="inputAddress2" class="form-label">Max Value</label>
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="max_value">
+                    </div>
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+
+                  <form class="row g-3 m-4 border border-dark p-3 d-none">
+                    <div class="col-md-6">
+                      <label for="inputEmail4" class="form-label">N Test Cases</label>
+                      <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Array Size</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="array_size">
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">Include N Flag</label>
+                        <select id="inputState" class="form-select">
+                          <option selected>No</option>
+                          <option>Yes</option>
+                        </select>
+                    </div>
+                      <div class="col-md-6">
+                        <label for="inputState" class="form-label">N Test Cases Flag</label>
+                        <select id="inputState" class="form-select">
+                          <option selected>No</option>
+                          <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                      <label for="inputAddress" class="form-label">Min value</label>
+                      <input type="text" class="form-control" id="inputAddress" placeholder="min_value">
+                    </div>
+                    <div class="col-6">
+                      <label for="inputAddress2" class="form-label">Max Value</label>
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="max_value">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">Distinct Value Flag</label>
+                        <select id="inputState" class="form-select">
+                          <option selected>No</option>
+                          <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                <!-- end here -->
             </div>
+
             <div class="col-6">
                 <div class="container mx-2 my-4">
                     <h6>Output</h6>
