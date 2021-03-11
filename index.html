@@ -51,40 +51,39 @@
                                 aria-expanded="false" id="array">Array</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#" id="simpleArray">Simple Array</a></li>
-                                <li><a class="dropdown-item" href="#">Array of Pairs</a></li>
-                                <li><a class="dropdown-item" href="#">Matrix</a></li>
+                                <li><a class="dropdown-item" href="#" id="arrayOfPairs">Array of Pairs</a></li>
+                                <li><a class="dropdown-item" href="#" id="arrayMatrix">Matrix</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                                 aria-expanded="false" id="string">String</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Simple String</a></li>
-                                <li><a class="dropdown-item" href="#">Binary String</a></li>
-                                <li><a class="dropdown-item" href="#">String with custom values</a></li>
-                                <li><a class="dropdown-item" href="#">Character Matrix</a></li>
+                                <li><a class="dropdown-item" href="#" id="simpleString">Simple String</a></li>
+                                <li><a class="dropdown-item" href="#" id="binaryString">Binary String</a></li>
+                                <li><a class="dropdown-item" href="#" id="customValuesString">String with custom values</a></li>
+                                <li><a class="dropdown-item" href="#" id="characterMatrix">Character Matrix</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                                 aria-expanded="false" id="tree">Tree</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Weighted Tree</a></li>
-                                <li><a class="dropdown-item" href="#">Unweighted Tree</a></li>
+                                <li><a class="dropdown-item" href="#" id="unweightedTree">Weighted Tree</a></li>
+                                <li><a class="dropdown-item" href="#" id="weightedTree">Unweighted Tree</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                                 aria-expanded="false" id="graph">Graph</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Weighted Graph</a></li>
-                                <li><a class="dropdown-item" href="#">Unweighted Graph</a></li>
+                                <li><a class="dropdown-item" href="#" id="unweightedGraph">Weighted Graph</a></li>
+                                <li><a class="dropdown-item" href="#" id="weightedGraph">Unweighted Graph</a></li>
                             </ul>
                         </li>
-
-
                     </ul>
                 </div>
+
                 <!-- Number -->
                 <form class="row g-3 m-4 border border-dark p-3 d-none" id="numberForm">
                     <div class="col-md-6">
@@ -150,6 +149,361 @@
                             <option selected>No</option>
                             <option>Yes</option>
                         </select>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+
+                <!-- Array of Pairs -->
+                <form class="row g-3 m-4 border border-dark p-3 d-none" id="arrayOfPairsForm">
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">N Test Cases</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">N Pairs</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="array_size">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">Include N Flag</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">N Test Cases Flag</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label for="inputAddress" class="form-label">Min First value</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="min_value">
+                    </div>
+                    <div class="col-6">
+                        <label for="inputAddress2" class="form-label">Max First Value</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="max_value">
+                    </div>
+                    <div class="col-6">
+                        <label for="inputAddress" class="form-label">Min Second value</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="min_value">
+                    </div>
+                    <div class="col-6">
+                        <label for="inputAddress2" class="form-label">Max Second Value</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="max_value">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">Distinct Pairs Value Flag</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+
+                <!-- Matrix -->
+                <form class="row g-3 m-4 border border-dark p-3 d-none" id="arrayMatrixForm">
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">N Test Cases</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">N Test Cases Flag</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label for="inputAddress" class="form-label">Number of Rows</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="min_value">
+                    </div>
+                    <div class="col-6">
+                        <label for="inputAddress2" class="form-label">Number of Columns</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="max_value">
+                    </div>
+                    <div class="col-6">
+                        <label for="inputAddress" class="form-label">Min value</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="min_value">
+                    </div>
+                    <div class="col-6">
+                        <label for="inputAddress2" class="form-label">Max Value</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="max_value">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">Distinct Value Flag</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">Include N M Flag</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+
+                <!-- Simple String -->
+                <form class="row g-3 m-4 border border-dark p-3 d-none" id="simpleStringForm">
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">N Test Cases</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">N Test Cases Flag</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">N String Size</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="string_size">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">Include N Flag</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label for="inputAddress" class="form-label">Specific Characters</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="min_value">
+                    </div>
+                    <div class="col-6">
+                        <label for="inputAddress2" class="form-label">Distinct Characters Flag</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="max_value">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+
+                <!-- Character Matrix -->
+                <form class="row g-3 m-4 border border-dark p-3 d-none" id="characterMatrixForm">
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">N Test Cases</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">N Test Cases Flag</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Number of Rows</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_rows">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Number of Columns</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_columns">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">Include N M Flag</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label for="inputAddress" class="form-label">Specific Characters</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="min_value">
+                    </div>
+                    <div class="col-6">
+                        <label for="inputAddress2" class="form-label">Distinct Characters Flag</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="max_value">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+
+                <!-- Unweighted Tree -->
+                <form class="row g-3 m-4 border border-dark p-3 d-none" id="unweightedTreeForm">
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">N Test Cases</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">N Test Cases Flag</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Number of Nodes</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">Number of Nodes Flag</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Nodes Starting From</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+
+                <!-- Weighted Tree -->
+                <form class="row g-3 m-4 border border-dark p-3 d-none" id="weightedTreeForm">
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">N Test Cases</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">N Test Cases Flag</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Number of Nodes</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">Number of Nodes Flag</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Minumum Weight Value</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Maximum Weight Value</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Nodes Starting From</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+
+                <!-- Unweighted Graph -->
+                <form class="row g-3 m-4 border border-dark p-3 d-none" id="unweightedGraphForm">
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">N Test Cases</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">N Test Cases Flag</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Number of Nodes</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">Number of Edges</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">Include N E Flag</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">Is Directed Flag</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Nodes Starting From</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+
+                <!-- Weighted Graph -->
+                <form class="row g-3 m-4 border border-dark p-3 d-none" id="weightedGraphForm">
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">N Test Cases</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">N Test Cases Flag</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Number of Nodes</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">Number of Edges</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">Include N E Flag</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Minumum Weight value</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Maximum Weight Value</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputState" class="form-label">Is Directed Flag</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>No</option>
+                            <option>Yes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Nodes Starting From</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
                     </div>
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">Submit</button>
