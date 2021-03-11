@@ -17,48 +17,58 @@ function showForm() {
   }
   var element = document.getElementById(arguments[0]);
   element = anchorlink;
-  var formId, categoryId;
+  var formId, categoryId, heading;
   if(element == "singleNumber") {
     formId = "singleNumberForm";
     categoryId = "number";
+    heading = "Single Number";
   }
   if(element == "simpleArray") {
     formId = "simpleArrayForm";
     categoryId = "array";
+    heading = "Simple Array";
   }
   if(element == "arrayOfPairs") {
     formId = "arrayOfPairsForm";
     categoryId = "array";
+    heading = "Array of Pairs";
   }
   if(element == "matrix") {
     formId = "matrixForm";
     categoryId = "array";
+    heading = "Matrix";
   }
   if(element == "simpleString") {
     formId = "simpleStringForm";
     categoryId = "string";
+    heading = "Simple String";
   }
   if(element == "characterMatrix") {
     formId = "characterMatrixForm";
     categoryId = "string";
+    heading = "Character Matrix";
   }
   if(element == "weightedTree") {
     formId = "weightedTreeForm";
     categoryId = "tree";
+    heading = "Weighted Tree";
   }
   if(element == "unweightedTree") {
     formId = "unweightedTreeForm";
     categoryId = "tree";
+    heading = "Unweighted Tree";
   }
   if(element == "weightedGraph") {
     formId = "weightedGraphForm";
     categoryId = "graph";
+    heading = "Weighted Graph";
   }
   if(element == "unweightedGraph") {
     formId = "unweightedGraphForm";
     categoryId = "graph";
+    heading = "Unweighted Graph";
   }
-
+  document.getElementById("defineHead").innerHTML = "Random " + heading;
   document.getElementById(formId).classList.remove("d-none");
   document.getElementById(categoryId).classList.add("active");
 }
