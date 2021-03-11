@@ -43,8 +43,12 @@
                 <div class="container mx-2 my-4">
                     <h6>Input</h6>
                     <ul class="nav nav-tabs">
-                        <li class="nav-item" id="numli">
-                            <a class="nav-link" aria-current="page" href="#" id="number">Number</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                aria-expanded="false" id="number">Number</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" id="singleNumber">Single Number</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
@@ -52,7 +56,7 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#" id="simpleArray">Simple Array</a></li>
                                 <li><a class="dropdown-item" href="#" id="arrayOfPairs">Array of Pairs</a></li>
-                                <li><a class="dropdown-item" href="#" id="arrayMatrix">Matrix</a></li>
+                                <li><a class="dropdown-item" href="#" id="matrix">Matrix</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -60,10 +64,6 @@
                                 aria-expanded="false" id="string">String</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#" id="simpleString">Simple String</a></li>
-                                <!-- 
-                                <li><a class="dropdown-item" href="#" id="binaryString">Binary String</a></li>
-                                <li><a class="dropdown-item" href="#" id="customValuesString">String with custom values</a></li>
-                                 -->
                                 <li><a class="dropdown-item" href="#" id="characterMatrix">Character Matrix</a></li>
                             </ul>
                         </li>
@@ -71,23 +71,24 @@
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                                 aria-expanded="false" id="tree">Tree</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#" id="unweightedTree">Weighted Tree</a></li>
-                                <li><a class="dropdown-item" href="#" id="weightedTree">Unweighted Tree</a></li>
+                                <li><a class="dropdown-item" href="#" id="weightedTree">Weighted Tree</a></li>
+                                <li><a class="dropdown-item" href="#" id="unweightedTree">Unweighted Tree</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                                 aria-expanded="false" id="graph">Graph</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#" id="unweightedGraph">Weighted Graph</a></li>
-                                <li><a class="dropdown-item" href="#" id="weightedGraph">Unweighted Graph</a></li>
+                                <li><a class="dropdown-item" href="#" id="weightedGraph">Weighted Graph</a></li>
+                                <li><a class="dropdown-item" href="#" id="unweightedGraph">Unweighted Graph</a></li>
                             </ul>
                         </li>
+
+
                     </ul>
                 </div>
-
                 <!-- Number -->
-                <form class="row g-3 m-4 border border-dark p-3 d-none" id="numberForm">
+                <form class="row g-3 m-4 border border-dark p-3 d-none" id="singleNumberForm">
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">N Test Cases</label>
                         <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
@@ -157,8 +158,10 @@
                     </div>
                 </form>
 
+
+
                 <!-- Array of Pairs -->
-                <form class="row g-3 m-4 border border-dark p-3 d-none" id="arrayOfPairsForm">
+                <form class="row g-3 m-4 border border-dark p-3" id="arrayOfPairsForm">
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">N Test Cases</label>
                         <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
@@ -211,7 +214,7 @@
                 </form>
 
                 <!-- Matrix -->
-                <form class="row g-3 m-4 border border-dark p-3 d-none" id="arrayMatrixForm">
+                <form class="row g-3 m-4 border border-dark p-3" id="matrixForm">
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">N Test Cases</label>
                         <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
@@ -259,7 +262,7 @@
                 </form>
 
                 <!-- Simple String -->
-                <form class="row g-3 m-4 border border-dark p-3 d-none" id="simpleStringForm">
+                <form class="row g-3 m-4 border border-dark p-3" id="simpleStringForm">
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">N Test Cases</label>
                         <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
@@ -273,7 +276,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">N String Size</label>
-                        <input type="text" class="form-control" id="inputEmail4" placeholder="string_size">
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
                     </div>
                     <div class="col-md-6">
                         <label for="inputState" class="form-label">Include N Flag</label>
@@ -296,7 +299,7 @@
                 </form>
 
                 <!-- Character Matrix -->
-                <form class="row g-3 m-4 border border-dark p-3 d-none" id="characterMatrixForm">
+                <form class="row g-3 m-4 border border-dark p-3" id="characterMatrixForm">
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">N Test Cases</label>
                         <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
@@ -310,11 +313,11 @@
                     </div>
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">Number of Rows</label>
-                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_rows">
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
                     </div>
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">Number of Columns</label>
-                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_columns">
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
                     </div>
                     <div class="col-md-6">
                         <label for="inputState" class="form-label">Include N M Flag</label>
@@ -337,7 +340,7 @@
                 </form>
 
                 <!-- Unweighted Tree -->
-                <form class="row g-3 m-4 border border-dark p-3 d-none" id="unweightedTreeForm">
+                <form class="row g-3 m-4 border border-dark p-3" id="unweightedTreeForm">
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">N Test Cases</label>
                         <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
@@ -370,7 +373,7 @@
                 </form>
 
                 <!-- Weighted Tree -->
-                <form class="row g-3 m-4 border border-dark p-3 d-none" id="weightedTreeForm">
+                <form class="row g-3 m-4 border border-dark p-3" id="weightedTreeForm">
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">N Test Cases</label>
                         <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
@@ -411,7 +414,7 @@
                 </form>
 
                 <!-- Unweighted Graph -->
-                <form class="row g-3 m-4 border border-dark p-3 d-none" id="unweightedGraphForm">
+                <form class="row g-3 m-4 border border-dark p-3" id="unweightedGraphForm">
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">N Test Cases</label>
                         <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
@@ -458,7 +461,7 @@
                 </form>
 
                 <!-- Weighted Graph -->
-                <form class="row g-3 m-4 border border-dark p-3 d-none" id="weightedGraphForm">
+                <form class="row g-3 m-4 border border-dark p-3" id="weightedGraphForm">
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">N Test Cases</label>
                         <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
