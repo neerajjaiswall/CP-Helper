@@ -73,6 +73,34 @@ function showForm() {
   document.getElementById(categoryId).classList.add("active");
 }
 
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+function generateInput() {
+  var heading = document.getElementById("defineHead").innerHTML;
+  
+  if(heading == "Random Single Number") {
+    var n_test_cases = document.getElementById("numberTestCases").value;
+    var min_value = document.getElementById("numberMinValue").value;
+    var max_value = document.getElementById("numberMaxValue").value;
+    var n_test_cases_flag = document.getElementById("numberTestCasesFlag").value;
+    
+    // var currentState = getTextAreaValue("outputTextArea");
+    if(n_test_cases_flag == "1") {
+      document.getElementById("outputTextArea").value += n_test_cases + '\n';
+    }
+
+    var it;
+    for(it = 0; it<n_test_cases; it++) {
+      document.getElementById("outputTextArea").value += getRndInteger(Number(min_value), Number(max_value)) + '\n';
+    }
+    console.log(min_value);
+    console.log(max_value);
+    console.log(n_test_cases_flag);
+    console.log(n_test_cases);
+  }
+}
 // document.getElementById("number").onclick = function () {
 //   var element = document.getElementById("number");
 //   element.classList.add("active");

@@ -106,22 +106,22 @@
                     <form class="row g-3" id="singleNumberForm">
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">N Test Cases</label>
-                            <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                            <input type="text" class="form-control" id="numberTestCases" placeholder="#_test_cases">
                         </div>
                         <div class="col-md-6">
-                            <label for="inputState" class="form-label">N Test Cases Flag</label>
-                            <select id="inputState" class="form-select">
-                                <option selected>No</option>
-                                <option>Yes</option>
+                            <label for="text" class="form-label">N Test Cases Flag</label>
+                            <select class="form-select" id = "numberTestCasesFlag">
+                                <option value = "0">No</option>
+                                <option value = "1">Yes</option>
                             </select>
                         </div>
                         <div class="col-6">
-                            <label for="inputAddress" class="form-label">Min value</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="min_value">
+                            <label for="inputAddress" class="form-label" >Min value</label>
+                            <input type="text" class="form-control" id = "numberMinValue" placeholder="min_value">
                         </div>
                         <div class="col-6">
-                            <label for="inputAddress2" class="form-label">Max Value</label>
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="max_value">
+                            <label for="inputAddress2" class="form-label" >Max Value</label>
+                            <input type="text" class="form-control" id = "numberMaxValue" placeholder="max_value">
                         </div>
 
                     </form>
@@ -510,7 +510,7 @@
 
                     </form>
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                        <button type="submit" class="btn btn-primary mt-3" onclick = "generateInput();">Submit</button>
                     </div>
                 </div>
 
@@ -521,7 +521,7 @@
                     <h6>Output</h6>
                     <form>
                         <div class="form-group">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="25"></textarea>
+                            <textarea class="form-control" id="outputTextArea" rows="25"></textarea>
                         </div>
                     </form>
                 </div>
