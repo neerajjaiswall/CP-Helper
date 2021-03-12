@@ -100,8 +100,12 @@
 
                 <h6 class="m-4" id="defineHead">Random Single Number</h6>
 
-                <div class="container m-4 border border-3 p-3" id="allForms">
+                <div class="container m-4 border border-3 p-3">
 
+                    <div class="alert alert-danger alert-dismissible fade show d-none" role="alert" id="invalidAlert">
+                        <strong>Invalid set of inputs !</strong> Please check all the fields and try again.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                     <!-- Number -->
                     <form class="row g-3" id="singleNumberForm">
                         <div class="col-md-6">
@@ -110,18 +114,18 @@
                         </div>
                         <div class="col-md-6">
                             <label for="text" class="form-label">N Test Cases Flag</label>
-                            <select class="form-select" id = "numberTestCasesFlag">
-                                <option value = "0">No</option>
-                                <option value = "1">Yes</option>
+                            <select class="form-select" id="numberTestCasesFlag">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
                             </select>
                         </div>
                         <div class="col-6">
-                            <label for="inputAddress" class="form-label" >Min value</label>
-                            <input type="text" class="form-control" id = "numberMinValue" placeholder="min_value">
+                            <label for="inputAddress" class="form-label">Min value</label>
+                            <input type="text" class="form-control" id="numberMinValue" placeholder="min_value">
                         </div>
                         <div class="col-6">
-                            <label for="inputAddress2" class="form-label" >Max Value</label>
-                            <input type="text" class="form-control" id = "numberMaxValue" placeholder="max_value">
+                            <label for="inputAddress2" class="form-label">Max Value</label>
+                            <input type="text" class="form-control" id="numberMaxValue" placeholder="max_value">
                         </div>
 
                     </form>
@@ -130,40 +134,40 @@
                     <form class="row g-3 d-none" id="simpleArrayForm">
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">N Test Cases</label>
-                            <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                            <input type="text" class="form-control" id="simpleArrayNtc" placeholder="#_test_cases">
                         </div>
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Array Size</label>
-                            <input type="text" class="form-control" id="inputEmail4" placeholder="array_size">
+                            <input type="text" class="form-control" id="simpleArraySize" placeholder="array_size">
                         </div>
 
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">Include N Flag</label>
-                            <select id="inputState" class="form-select">
-                                <option selected>No</option>
-                                <option>Yes</option>
+                            <select id="simpleArrayNFlag" class="form-select">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
                             </select>
                         </div>
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">N Test Cases Flag</label>
-                            <select id="inputState" class="form-select">
-                                <option selected>No</option>
-                                <option>Yes</option>
+                            <select id="simpleArrayNtcFlag" class="form-select">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
                             </select>
                         </div>
                         <div class="col-6">
                             <label for="inputAddress" class="form-label">Min value</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="min_value">
+                            <input type="text" class="form-control" id="simpleArrayMinValue" placeholder="min_value">
                         </div>
                         <div class="col-6">
                             <label for="inputAddress2" class="form-label">Max Value</label>
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="max_value">
+                            <input type="text" class="form-control" id="simpleArrayMaxValue" placeholder="max_value">
                         </div>
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">Distinct Value Flag</label>
-                            <select id="inputState" class="form-select">
-                                <option selected>No</option>
-                                <option>Yes</option>
+                            <select id="simpleArrayDvFlag" class="form-select">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
                             </select>
                         </div>
 
@@ -175,46 +179,46 @@
                     <form class="row g-3 d-none" id="arrayOfPairsForm">
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">N Test Cases</label>
-                            <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                            <input type="text" class="form-control" id="arrayOfPairsNtc" placeholder="#_test_cases">
                         </div>
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">N Pairs</label>
-                            <input type="text" class="form-control" id="inputEmail4" placeholder="array_size">
+                            <input type="text" class="form-control" id="arrayOfPairsSize" placeholder="array_size">
                         </div>
 
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">Include N Flag</label>
-                            <select id="inputState" class="form-select">
+                            <select id="arrayOfPairsNFlag" class="form-select">
                                 <option selected>No</option>
                                 <option>Yes</option>
                             </select>
                         </div>
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">N Test Cases Flag</label>
-                            <select id="inputState" class="form-select">
-                                <option selected>No</option>
-                                <option>Yes</option>
+                            <select id="arrayOfPairsNtcFlag" class="form-select">
+                                <option selected value="0">No</option>
+                                <option value="1">Yes</option>
                             </select>
                         </div>
                         <div class="col-6">
                             <label for="inputAddress" class="form-label">Min First value</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="min_value">
+                            <input type="text" class="form-control" id="arrayOfPairsMinFv" placeholder="min_value">
                         </div>
                         <div class="col-6">
                             <label for="inputAddress2" class="form-label">Max First Value</label>
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="max_value">
+                            <input type="text" class="form-control" id="arrayOfPairsMaxFv" placeholder="max_value">
                         </div>
                         <div class="col-6">
                             <label for="inputAddress" class="form-label">Min Second value</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="min_value">
+                            <input type="text" class="form-control" id="arrayOfPairsMinSv" placeholder="min_value">
                         </div>
                         <div class="col-6">
                             <label for="inputAddress2" class="form-label">Max Second Value</label>
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="max_value">
+                            <input type="text" class="form-control" id="arrayOfPairsMaxSv" placeholder="max_value">
                         </div>
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">Distinct Pairs Value Flag</label>
-                            <select id="inputState" class="form-select">
+                            <select id="arrayOfPairsDpvFlag" class="form-select">
                                 <option selected>No</option>
                                 <option>Yes</option>
                             </select>
@@ -226,41 +230,41 @@
                     <form class="row g-3 d-none" id="matrixForm">
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">N Test Cases</label>
-                            <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                            <input type="text" class="form-control" id="matrixNtc" placeholder="#_test_cases">
                         </div>
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">N Test Cases Flag</label>
-                            <select id="inputState" class="form-select">
+                            <select id="matrixNtcFlag" class="form-select">
                                 <option selected>No</option>
                                 <option>Yes</option>
                             </select>
                         </div>
                         <div class="col-6">
                             <label for="inputAddress" class="form-label">Number of Rows</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="min_value">
+                            <input type="text" class="form-control" id="matrixRows placeholder=" min_value">
                         </div>
                         <div class="col-6">
                             <label for="inputAddress2" class="form-label">Number of Columns</label>
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="max_value">
+                            <input type="text" class="form-control" id="matrixCols" placeholder="max_value">
                         </div>
                         <div class="col-6">
                             <label for="inputAddress" class="form-label">Min value</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="min_value">
+                            <input type="text" class="form-control" id="matrixMinValue" placeholder="min_value">
                         </div>
                         <div class="col-6">
                             <label for="inputAddress2" class="form-label">Max Value</label>
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="max_value">
+                            <input type="text" class="form-control" id="matrixMaxValue" placeholder="max_value">
                         </div>
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">Distinct Value Flag</label>
-                            <select id="inputState" class="form-select">
-                                <option selected>No</option>
-                                <option>Yes</option>
+                            <select id="matrixDvFlag" class="form-select">
+                                <option selected value="0">No</option>
+                                <option value="1">Yes</option>
                             </select>
                         </div>
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">Include N M Flag</label>
-                            <select id="inputState" class="form-select">
+                            <select id="matrixNMFlag" class="form-select">
                                 <option selected>No</option>
                                 <option>Yes</option>
                             </select>
@@ -272,33 +276,34 @@
                     <form class="row g-3 d-none" id="simpleStringForm">
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">N Test Cases</label>
-                            <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                            <input type="text" class="form-control" id="simpleStringNtc" placeholder="#_test_cases">
                         </div>
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">N Test Cases Flag</label>
-                            <select id="inputState" class="form-select">
+                            <select id="simpleStringNtcFlag" class="form-select">
                                 <option selected>No</option>
                                 <option>Yes</option>
                             </select>
                         </div>
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">N String Size</label>
-                            <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                            <input type="text" class="form-control" id="simpleStringSize" placeholder="#_test_cases">
                         </div>
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">Include N Flag</label>
-                            <select id="inputState" class="form-select">
+                            <select id="simpleStringNFlag" class="form-select">
                                 <option selected>No</option>
                                 <option>Yes</option>
                             </select>
                         </div>
                         <div class="col-6">
                             <label for="inputAddress" class="form-label">Specific Characters</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="min_value">
+                            <input type="text" class="form-control" id="simpleStringSpecificChar"
+                                placeholder="min_value">
                         </div>
                         <div class="col-6">
                             <label for="inputAddress2" class="form-label">Distinct Characters Flag</label>
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="max_value">
+                            <input type="text" class="form-control" id="simpleStringDcharFlag" placeholder="max_value">
                         </div>
 
                     </form>
@@ -307,37 +312,38 @@
                     <form class="row g-3 d-none" id="characterMatrixForm">
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">N Test Cases</label>
-                            <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                            <input type="text" class="form-control" id="charMatrixNtc" placeholder="#_test_cases">
                         </div>
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">N Test Cases Flag</label>
-                            <select id="inputState" class="form-select">
+                            <select id="charMatrixNtcFlag" class="form-select">
                                 <option selected>No</option>
                                 <option>Yes</option>
                             </select>
                         </div>
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Number of Rows</label>
-                            <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                            <input type="text" class="form-control" id="charMatrixRows" placeholder="#_test_cases">
                         </div>
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Number of Columns</label>
-                            <input type="text" class="form-control" id="inputEmail4" placeholder="#_test_cases">
+                            <input type="text" class="form-control" id="charMatrixCols" placeholder="#_test_cases">
                         </div>
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">Include N M Flag</label>
-                            <select id="inputState" class="form-select">
+                            <select id="charMatrixNMFlag" class="form-select">
                                 <option selected>No</option>
                                 <option>Yes</option>
                             </select>
                         </div>
                         <div class="col-6">
                             <label for="inputAddress" class="form-label">Specific Characters</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="min_value">
+                            <input type="text" class="form-control" id="charMatrixSpecificChars"
+                                placeholder="min_value">
                         </div>
                         <div class="col-6">
                             <label for="inputAddress2" class="form-label">Distinct Characters Flag</label>
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="max_value">
+                            <input type="text" class="form-control" id="charMatrixDcharsFlag" placeholder="max_value">
                         </div>
 
                     </form>
@@ -510,7 +516,7 @@
 
                     </form>
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary mt-3" onclick = "generateInput();">Submit</button>
+                        <button type="submit" class="btn btn-primary mt-3" onclick="generateInput();">Submit</button>
                     </div>
                 </div>
 
