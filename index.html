@@ -235,13 +235,13 @@
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">N Test Cases Flag</label>
                             <select id="matrixNtcFlag" class="form-select">
-                                <option selected>No</option>
-                                <option>Yes</option>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
                             </select>
                         </div>
                         <div class="col-6">
                             <label for="inputAddress" class="form-label">Number of Rows</label>
-                            <input type="text" class="form-control" id="matrixRows placeholder=" min_value">
+                            <input type="text" class="form-control" id="matrixRows" placeholder=" min_value">
                         </div>
                         <div class="col-6">
                             <label for="inputAddress2" class="form-label">Number of Columns</label>
@@ -255,21 +255,20 @@
                             <label for="inputAddress2" class="form-label">Max Value</label>
                             <input type="text" class="form-control" id="matrixMaxValue" placeholder="max_value">
                         </div>
-                        <div class="col-md-6">
+                        <!-- <div class="col-md-6">
                             <label for="inputState" class="form-label">Distinct Value Flag</label>
                             <select id="matrixDvFlag" class="form-select">
                                 <option selected value="0">No</option>
                                 <option value="1">Yes</option>
                             </select>
-                        </div>
+                        </div> -->
                         <div class="col-md-6">
-                            <label for="inputState" class="form-label">Include N M Flag</label>
-                            <select id="matrixNMFlag" class="form-select">
-                                <option selected>No</option>
-                                <option>Yes</option>
+                            <label for="inputState" class="form-label">Include R C Flag</label>
+                            <select id="matrixRCFlag" class="form-select">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
                             </select>
                         </div>
-
                     </form>
 
                     <!-- Simple String -->
@@ -281,8 +280,8 @@
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">N Test Cases Flag</label>
                             <select id="simpleStringNtcFlag" class="form-select">
-                                <option selected>No</option>
-                                <option>Yes</option>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
                             </select>
                         </div>
                         <div class="col-md-6">
@@ -292,18 +291,22 @@
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">Include N Flag</label>
                             <select id="simpleStringNFlag" class="form-select">
-                                <option selected>No</option>
-                                <option>Yes</option>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
                             </select>
                         </div>
                         <div class="col-6">
                             <label for="inputAddress" class="form-label">Specific Characters</label>
                             <input type="text" class="form-control" id="simpleStringSpecificChar"
-                                placeholder="min_value">
+                                placeholder="enter comma separated characters">
                         </div>
                         <div class="col-6">
-                            <label for="inputAddress2" class="form-label">Distinct Characters Flag</label>
-                            <input type="text" class="form-control" id="simpleStringDcharFlag" placeholder="max_value">
+                            <!-- <label for="inputAddress2" class="form-label">Distinct Characters Flag</label>
+                            <select id="simpleStringDcharFlag" class="form-select">
+                                <option selected value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select> -->
+                            <!-- <input type="text" class="form-control" id="simpleStringDcharFlag" placeholder="max_value"> -->
                         </div>
 
                     </form>
@@ -317,8 +320,8 @@
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">N Test Cases Flag</label>
                             <select id="charMatrixNtcFlag" class="form-select">
-                                <option selected>No</option>
-                                <option>Yes</option>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
                             </select>
                         </div>
                         <div class="col-md-6">
@@ -330,10 +333,10 @@
                             <input type="text" class="form-control" id="charMatrixCols" placeholder="#_test_cases">
                         </div>
                         <div class="col-md-6">
-                            <label for="inputState" class="form-label">Include N M Flag</label>
-                            <select id="charMatrixNMFlag" class="form-select">
-                                <option selected>No</option>
-                                <option>Yes</option>
+                            <label for="inputState" class="form-label">Include R C Flag</label>
+                            <select id="charMatrixRClag" class="form-select">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
                             </select>
                         </div>
                         <div class="col-6">
@@ -341,10 +344,10 @@
                             <input type="text" class="form-control" id="charMatrixSpecificChars"
                                 placeholder="min_value">
                         </div>
-                        <div class="col-6">
+                        <!-- <div class="col-6">
                             <label for="inputAddress2" class="form-label">Distinct Characters Flag</label>
                             <input type="text" class="form-control" id="charMatrixDcharsFlag" placeholder="max_value">
-                        </div>
+                        </div> -->
 
                     </form>
 
