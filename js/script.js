@@ -76,6 +76,9 @@ function showForm() {
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+function getRndChar() {
+  
+}
 
 function generateInput() {
   document.getElementById("outputTextArea").value = "";
@@ -124,6 +127,44 @@ function generateInput() {
       document.getElementById("outputTextArea").value += '\n';
     }
   }
+
+
+  else if(heading=="Random Simple String")
+  {
+    console.log("neeraj");
+    var tc =document.getElementById("simpleStringNtc").value;
+    var tcFlag=document.getElementById("simpleStringNtcFlag").value;
+    var s_size=document.getElementById("simpleStringSize").value;
+    var nflag=document.getElementById("simpleStringNFlag").value;
+    var specific_char=document.getElementById("simpleStringSpecificChar").value;
+    var s_char = (specific_char).split(",");
+    // var distinct_cflag=document.getelementById("simpleStringDcharFlag").value;
+
+    if (tcFlag == "1") {
+      document.getElementById("outputTextArea").value += tc + '\n';
+    }
+    var it,it2;
+    console.log(s_char);
+    if(s_char.length) {
+      var siz = s_char.length;
+      console.log(siz);
+      console.log(Math.random());
+      for(it=0;it<tc;it++) {
+        if(nflag=="1") document.getElementById("outputTextArea").value += s_size + '\n';
+        for(it2=0; it2<s_size; it2++)
+          document.getElementById("outputTextArea").value += s_char[getRndInteger(Number(0), Number(1000000))%(siz)];
+          document.getElementById("outputTextArea").value +='\n';
+      }
+    }
+    else {
+      for(it=0;it<tc;it++) {
+        if(nflag=="1") document.getElementById("outputTextArea").value += s_size + '\n';
+        for(it2=0; it2<s_size; it2++)
+          document.getElementById("outputTextArea").value += String.fromCharCode(97 + getRndInteger(Number(0), Number(25)));
+          document.getElementById("outputTextArea").value +='\n';
+      }
+    }
+    } 
 }
 
 
