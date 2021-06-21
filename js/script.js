@@ -271,6 +271,26 @@ function generateInput() {
     }
 
   }
+  else if(heading=="Random Weighted Graph")
+  {
+    var tc = document.getElementById("weightedgNtc").value;
+    var tcflag = document.getElementById("weightedgNtcflag").value;
+    var nodes = document.getElementById("weightedgNodes").value;
+    var edges = document.getElementById("weightedgEdges").value;
+    var NEFlag = document.getElementById("weightedgNEflag").value;
+    var isdirectedflag=document.getElementById("weightedgDirectedflag").value;
+    var initnode= document.getElementById("weightedgNodesStart").value;
+  }
+  else if(heading=="Random UnWeighted Graph")
+  {
+    var tc = document.getElementById("unweightedgNtc").value;
+    var tcflag = document.getElementById("unweightedgNtcflag").value;
+    var nodes = document.getElementById("unweightedgNodes").value;
+    var edges = document.getElementById("unweightedgEdges").value;
+    var NEFlag = document.getElementById("unweightedgNEflag").value;
+    var isdirectedflag=document.getElementById("unweightedgDirected").value;
+    var initnode= document.getElementById("unweightedgNodesStart").value;
+  }
 }
 
 // document.getElementById("number").onclick = function () {
