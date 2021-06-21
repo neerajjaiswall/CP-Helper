@@ -137,7 +137,7 @@ function generateInput() {
       document.getElementById("outputTextArea").value += "\n";
     }
   } else if (heading == "Random Simple String") {
-    console.log("neeraj");
+    console.log("neera   j");
     var tc = document.getElementById("simpleStringNtc").value;
     var tcFlag = document.getElementById("simpleStringNtcFlag").value;
     var s_size = document.getElementById("simpleStringSize").value;
