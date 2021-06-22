@@ -87,10 +87,14 @@
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                                 aria-expanded="false" id="graph">Graph</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#" id="weightedGraph"
-                                        onclick="showForm(this.id)">Weighted Graph</a></li>
-                                <li><a class="dropdown-item" href="#" id="unweightedGraph"
-                                        onclick="showForm(this.id)">Unweighted Graph</a></li>
+                                <li><a class="dropdown-item" href="#" id="dwGraph"
+                                    onclick="showForm(this.id)">Directed Weighted Graph</a></li>
+                            <li><a class="dropdown-item" href="#" id="udwGraph"
+                                    onclick="showForm(this.id)">Undirected Weighted Graph</a></li>
+                                    <li><a class="dropdown-item" href="#" id="duwGraph"
+                                        onclick="showForm(this.id)">Directed Unweighted Graph</a></li>
+                                <li><a class="dropdown-item" href="#" id="uduwGraph"
+                                        onclick="showForm(this.id)">Undirected Unweighted Graph</a></li>
                             </ul>
                         </li>
 
@@ -104,8 +108,10 @@
 
                     <div class="alert alert-danger alert-dismissible fade show d-none" role="alert" id="invalidAlert">
                         <strong>Invalid set of inputs !</strong> Please check all the fields and try again.
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <!-- <button type="button" class="btn-close" data-bs-dismiss="alert"></button> -->
                     </div>
+
+
                     <!-- Number -->
                     <form class="row g-3" id="singleNumberForm">
                         <div class="col-md-6">
@@ -189,8 +195,8 @@
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">Include N Flag</label>
                             <select id="arrayOfPairsNFlag" class="form-select">
-                                <option selected>No</option>
-                                <option>Yes</option>
+                                <option selected value="0">No</option>
+                                <option value="1">Yes</option>
                             </select>
                         </div>
                         <div class="col-md-6">
@@ -202,27 +208,27 @@
                         </div>
                         <div class="col-6">
                             <label for="inputAddress" class="form-label">Min First value</label>
-                            <input type="text" class="form-control" id="arrayOfPairsMinFv" placeholder="min_value">
+                            <input type="text" class="form-control" id="arrayOfPairsMinFv" placeholder="min_value1">
                         </div>
                         <div class="col-6">
                             <label for="inputAddress2" class="form-label">Max First Value</label>
-                            <input type="text" class="form-control" id="arrayOfPairsMaxFv" placeholder="max_value">
+                            <input type="text" class="form-control" id="arrayOfPairsMaxFv" placeholder="max_value1">
                         </div>
                         <div class="col-6">
                             <label for="inputAddress" class="form-label">Min Second value</label>
-                            <input type="text" class="form-control" id="arrayOfPairsMinSv" placeholder="min_value">
+                            <input type="text" class="form-control" id="arrayOfPairsMinSv" placeholder="min_value2">
                         </div>
                         <div class="col-6">
                             <label for="inputAddress2" class="form-label">Max Second Value</label>
-                            <input type="text" class="form-control" id="arrayOfPairsMaxSv" placeholder="max_value">
+                            <input type="text" class="form-control" id="arrayOfPairsMaxSv" placeholder="max_value2">
                         </div>
-                        <div class="col-md-6">
+                        <!-- <div class="col-md-6">
                             <label for="inputState" class="form-label">Distinct Pairs Value Flag</label>
                             <select id="arrayOfPairsDpvFlag" class="form-select">
                                 <option selected>No</option>
                                 <option>Yes</option>
                             </select>
-                        </div>
+                        </div> -->
 
                     </form>
 
@@ -436,14 +442,11 @@
                         </div>
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Number of Nodes</label>
-                            <input type="text" class="form-control" id="unweightedgNodes" placeholder="#_test_cases">
+                            <input type="text" class="form-control" id="unweightedgNodes" placeholder="#_nodes">
                         </div>
                         <div class="col-md-6">
-                            <label for="inputState" class="form-label">Number of Edges</label>
-                            <select id="unweightedgEdges" class="form-select">
-                                <option selected>No</option>
-                                <option>Yes</option>
-                            </select>
+                            <label for="inputEmail4" class="form-label">Number of Edges</label>
+                            <input type="text" class="form-control" id="unweightedgEdges" placeholder="#_edges">
                         </div>
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">Include N E Flag</label>
@@ -461,7 +464,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Nodes Starting From</label>
-                            <input type="text" class="form-control" id="unweightedgNodesStart" placeholder="#_test_cases">
+                            <input type="text" class="form-control" id="unweightedgNodesStart" placeholder="starting_node">
                         </div>
 
                     </form>
@@ -481,14 +484,11 @@
                         </div>
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Number of Nodes</label>
-                            <input type="text" class="form-control" id="weightedgNodes" placeholder="#_test_cases">
+                            <input type="number" class="form-control" id="weightedgNodes" placeholder="#_nodes">
                         </div>
                         <div class="col-md-6">
-                            <label for="inputState" class="form-label">Number of Edges</label>
-                            <select id="weightedgEdges" class="form-select">
-                                <option selected>No</option>
-                                <option>Yes</option>
-                            </select>
+                            <label for="inputEmail4" class="form-label">Number of Edges</label>
+                            <input type="number" class="form-control" id="weightedgEdges" placeholder="#_edges">
                         </div>
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">Include N E Flag</label>
@@ -499,11 +499,11 @@
                         </div>
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Minumum Weight value</label>
-                            <input type="text" class="form-control" id="weightedgMinWeight" placeholder="#_test_cases">
+                            <input type="text" class="form-control" id="weightedgMinWeight" placeholder="min_value">
                         </div>
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Maximum Weight Value</label>
-                            <input type="text" class="form-control" id="weightedgMaxWeight" placeholder="#_test_cases">
+                            <input type="text" class="form-control" id="weightedgMaxWeight" placeholder="max_value">
                         </div>
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">Is Directed Flag</label>
@@ -514,7 +514,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Nodes Starting From</label>
-                            <input type="text" class="form-control" id="weightedgNodesStart" placeholder="#_test_cases">
+                            <input type="number" class="form-control" id="weightedgNodesStart" placeholder="starting_node">
                         </div>
 
                     </form>
