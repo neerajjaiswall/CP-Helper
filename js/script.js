@@ -21,7 +21,7 @@ function showForm() {
     var element = document.getElementById(forms[i]);
     if (!element.classList.contains("d-none")) element.classList.add("d-none");
   }
-
+ 
   for (i = 0; i < categories.length; i++) {
     var element = document.getElementById(categories[i]);
     if (element.classList.contains("active"))
@@ -95,19 +95,19 @@ function showForm() {
   document.getElementById(formId).classList.remove("d-none");
   document.getElementById(categoryId).classList.add("active");
 }
-
+ 
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
+ 
 function generateInput() {
-
+ 
   var alertElement = document.getElementById("invalidAlert");
   if (!alertElement.classList.contains("d-none")) alertElement.classList.add("d-none");
-
+ 
   document.getElementById("outputTextArea").value = "";
   var heading = document.getElementById("defineHead").innerHTML;
-
+ 
   if (heading == "Random Single Number") {
     var n_test_cases = document.getElementById("numberTestCases").value;
     var min_value = document.getElementById("numberMinValue").value;
@@ -115,12 +115,12 @@ function generateInput() {
     var n_test_cases_flag = document.getElementById(
       "numberTestCasesFlag"
     ).value;
-
+ 
     // var currentState = getTextAreaValue("outputTextArea");
     if (n_test_cases_flag == "1") {
       document.getElementById("outputTextArea").value += n_test_cases + "\n";
     }
-
+ 
     var it;
     for (it = 0; it < n_test_cases; it++) {
       document.getElementById("outputTextArea").value +=
@@ -140,7 +140,7 @@ function generateInput() {
     var tcFlag = document.getElementById("simpleArrayNtcFlag").value;
     var nFlag = document.getElementById("simpleArrayNFlag").value;
     var dictinct_value = document.getElementById("simpleArrayDvFlag").value;
-
+ 
     // console.log(tc, cur_size, min_val, max_val, tcFlag, nFlag, dictinct_value);
     // var currentState = getTextAreaValue("outputTextArea");
     if((dictinct_value == "1") && (max_val-min_val+1 < cur_size)) {
@@ -153,24 +153,24 @@ function generateInput() {
     if (tcFlag == "1") {
       document.getElementById("outputTextArea").value += tc + "\n";
     }
-
-
+ 
+ 
     var it, it2;
-
-
+ 
+ 
     if(dictinct_value == "1") {
       console.log("check0");
       if(max_val-min_val+1 < cur_size) {console.log("Invalid range"); return;}
-
+ 
       console.log("check");
-
+ 
       let s = new Set();
       for (it = 0; it < tc; it++) {
         if (nFlag == "1")
           document.getElementById("outputTextArea").value += cur_size + "\n";
-
+ 
         for (it2 = 0; it2 < cur_size; it2++) {
-
+ 
           var num = getRndInteger(Number(min_val), Number(max_val));
           console.log(num);
           // while(s.has(num)==0) num = getRndInteger(Number(min_val), Number(max_val));
@@ -179,7 +179,7 @@ function generateInput() {
               num = getRndInteger(Number(min_val), Number(max_val));
             else break;
           }
-
+ 
           document.getElementById("outputTextArea").value +=
             num + " ";
             s.add(num);
@@ -188,7 +188,7 @@ function generateInput() {
         document.getElementById("outputTextArea").value += "\n";
       }
     }
-
+ 
     else {
       for (it = 0; it < tc; it++) {
         if (nFlag == "1")
@@ -200,11 +200,11 @@ function generateInput() {
         document.getElementById("outputTextArea").value += "\n";
       }
     }
-
+ 
   } 
-
-
-
+ 
+ 
+ 
   else if (heading == "Random Array of Pairs") {
     var tc = document.getElementById("arrayOfPairsNtc").value;
     var cur_size = document.getElementById("arrayOfPairsSize").value;
@@ -214,10 +214,10 @@ function generateInput() {
     var max_val2 = document.getElementById("arrayOfPairsMaxSv").value;
     var tcFlag = document.getElementById("arrayOfPairsNtcFlag").value;
     var nFlag = document.getElementById("arrayOfPairsNFlag").value;
-
+ 
     console.log(cur_size);
     // var dictinct_value = document.getElementById("simpleArrayDvFlag").value;
-
+ 
     // console.log(tc, cur_size, min_val, max_val, tcFlag, nFlag, dictinct_value);
     // var currentState = getTextAreaValue("outputTextArea");
     if((max_val1-min_val1+1 < cur_size) || (max_val2-min_val2+1 < cur_size)) {
@@ -227,33 +227,43 @@ function generateInput() {
         usethis.classList.remove("d-none");
       return;
     }
-
-
+ 
+ 
     if (tcFlag == "1") {
       document.getElementById("outputTextArea").value += tc + "\n";
     }
-
-
+ 
+ 
     var it, it2;
-
+ 
       let s = new Set();
       for (it = 0; it < tc; it++) {
         if (nFlag == "1")
           document.getElementById("outputTextArea").value += cur_size + "\n";
-
+ 
         for (it2 = 0; it2 < cur_size; it2++) {
-
+ 
           var num = new Array(2);
+          
           num[0] = getRndInteger(Number(min_val1), Number(max_val1));
           num[1] = getRndInteger(Number(min_val2), Number(max_val2));
-          console.log(num);
-          // while(s.has(num)==0) num = getRndInteger(Number(min_val), Number(max_val));
+
           while(1) {
-            if(s.has(num)) {
-              num[0] = getRndInteger(Number(min_val1), Number(max_val1));
-              num[1] = getRndInteger(Number(min_val2), Number(max_val2));
+            var flag = true;
+            for (item of s.values()) {
+              if(item[0] == num[0] && item[1]==num[1]) {
+                flag = false;
+                break;
+              }
             }
-            else break;
+              if(flag) {
+                break;
+              }
+              else {
+                num[0] = getRndInteger(Number(min_val1), Number(max_val1));
+                num[1] = getRndInteger(Number(min_val2), Number(max_val2));
+              }
+
           }
 
           document.getElementById("outputTextArea").value +=
@@ -261,10 +271,10 @@ function generateInput() {
             s.add(num);
         }
         s.clear();
-
+ 
         // document.getElementById("outputTextArea").value += "\n";
       }
-
+ 
   } 
   
   
@@ -277,13 +287,13 @@ function generateInput() {
     var specific_char = document.getElementById(
       "simpleStringSpecificChar"
     ).value;
-
+ 
     var s_char;
     if(specific_char!="")
       s_char = specific_char.split(",");
     else s_char = [];
     // var distinct_cflag=document.getelementById("simpleStringDcharFlag").value;
-
+ 
     if (tcFlag == "1") {
       document.getElementById("outputTextArea").value += tc + "\n";
     }
@@ -321,14 +331,14 @@ function generateInput() {
     var tcFlag = document.getElementById("matrixNtcFlag").value;
     var RCFlag = document.getElementById("matrixRCFlag").value;
     var dictinct_value = document.getElementById("simpleArrayDvFlag").value;
-
+ 
     // console.log(tc, cur_size, min_val, max_val, tcFlag, nFlag, dictinct_value);
     // var currentState = getTextAreaValue("outputTextArea");
     if (tcFlag == "1") {
       console.log("nero");
       document.getElementById("outputTextArea").value += tc + "\n";
     }
-
+ 
     var it, it2;
     for (it = 0; it < tc; it++) {
       if (RCFlag == "1")
@@ -355,18 +365,18 @@ function generateInput() {
     if(specific_char!="")
       s_char = specific_char.split(",");
     else s_char = [];
-
+ 
     // console.log(tc, cur_size, min_val, max_val, tcFlag, nFlag, dictinct_value);
     // var currentState = getTextAreaValue("outputTextArea");
     if (tcFlag == "1") {
       console.log("nero");
       document.getElementById("outputTextArea").value += tc + "\n";
     }
-
-
+ 
+ 
     if (s_char.length) {
       var siz = s_char.length;
-
+ 
       var it, it2;
       for (it = 0; it < tc; it++) {
         if (RCFlag == "1")
@@ -383,7 +393,7 @@ function generateInput() {
         // document.getElementById("outputTextArea").value += '\n';
       }
     } 
-
+ 
     else {
       var it, it2;
       for (it = 0; it < tc; it++) {
@@ -401,37 +411,360 @@ function generateInput() {
         // document.getElementById("outputTextArea").value += '\n';
       }
     }
+ 
+  }
 
+
+  else if(heading=="Random Directed Unweighted Graph") {   
+    var tc = document.getElementById("dunweightedgNtc").value;
+    var tcFlag = document.getElementById("dunweightedgNtcflag").value;
+    var nodes = document.getElementById("dunweightedgNodes").value;
+    var edges = document.getElementById("dunweightedgEdges").value;
+    var NEFlag = document.getElementById("dunweightedgNEflag").value;
+    //var isdirectedflag=document.getElementById("weightedgDirectedflag").value;
+    var initnode= document.getElementById("dunweightedgNodesStart").value;
+ 
+    if((edges > (nodes*(nodes-1)))) {
+      console.log("These number of edges is not possible with given number of nodes, Try  again!");
+      var usethis = document.getElementById("invalidAlert");
+      if(usethis.classList.contains("d-none"))
+        usethis.classList.remove("d-none");
+      return;
+    }
+
+
+    if (tcFlag == "1") {
+      document.getElementById("outputTextArea").value += tc + "\n";
+      console.log("xyz");
+    }
+ var it, it2;
+ 
+      let s = new Set();
+      for (it = 0; it < tc; it++) {
+        if (NEFlag == "1")
+        {
+          document.getElementById("outputTextArea").value += nodes + " " + edges + "\n";
+         }
+
+        for (it2 = 0; it2 < edges; it2++) {
+              
+          var num = new Array(2);
+          
+          if(initnode == "0") {
+            num[0] = getRndInteger(Number(0), Number(nodes-1));
+            num[1] = getRndInteger(Number(0), Number(nodes-1));
+          }
+          else {
+            num[0] = getRndInteger(Number(1), Number(nodes));
+            num[1] = getRndInteger(Number(1), Number(nodes));
+          }
+
+
+          while(1) {
+            var flag = true;
+            if(num[0]==num[1]) {
+              console.log(num[0] + ' ' + num[1] + '\n');
+              flag = false;
+            }
+            for (item of s.values()) {
+              if((item[0] == num[0] && item[1]==num[1])) {
+                flag = false;
+                break;
+              }
+            }
+              if(flag) {
+                break;
+              }
+              else {
+                if(initnode == "0") {
+                  num[0] = getRndInteger(Number(0), Number(nodes-1));
+                  num[1] = getRndInteger(Number(0), Number(nodes-1));
+                }
+                else {
+                  num[0] = getRndInteger(Number(1), Number(nodes));
+                  num[1] = getRndInteger(Number(1), Number(nodes));
+                }
+              }
+
+          }
+
+          document.getElementById("outputTextArea").value +=
+            num[0] + " " + num[1] + "\n";
+            s.add(num);
+            
+        }
+        s.clear();
+      }
   }
-  else if(heading=="Random Weighted Graph")
-  {
-    var tc = document.getElementById("weightedgNtc").value;
-    var tcflag = document.getElementById("weightedgNtcflag").value;
-    var nodes = document.getElementById("weightedgNodes").value;
-    var edges = document.getElementById("weightedgEdges").value;
-    var NEFlag = document.getElementById("weightedgNEflag").value;
-    var isdirectedflag=document.getElementById("weightedgDirectedflag").value;
-    var initnode= document.getElementById("weightedgNodesStart").value;
+
+
+else if(heading=="Random Undirected Unweighted Graph") {   
+    console.log("nero");
+    var tc = document.getElementById("uduwgNtc").value;
+    var tcFlag = document.getElementById("uduwgNtcflag").value;
+    var nodes = document.getElementById("uduwgNodes").value;
+    var edges = document.getElementById("uduwgEdges").value;
+    var NEFlag = document.getElementById("uduwgNEflag").value;
+    //var isdirectedflag=document.getElementById("weightedgDirectedflag").value;
+    var initnode= document.getElementById("uduwgNodesStart").value;
+ 
+    if((edges > (nodes*(nodes-1))/2)) {
+      console.log("These number of edges is not possible with given number of nodes, Try  again!");
+      var usethis = document.getElementById("invalidAlert");
+      if(usethis.classList.contains("d-none"))
+        usethis.classList.remove("d-none");
+      return;
+    }
+
+
+    if (tcFlag == "1") {
+      document.getElementById("outputTextArea").value += tc + "\n";
+      console.log("xyz");
+    }
+ var it, it2;
+ 
+      let s = new Set();
+      for (it = 0; it < tc; it++) {
+        if (NEFlag == "1")
+        {
+          document.getElementById("outputTextArea").value += nodes + " " + edges + "\n";
+         }
+
+        for (it2 = 0; it2 < edges; it2++) {
+              
+          var num = new Array(2);
+          
+          if(initnode == "0") {
+            num[0] = getRndInteger(Number(0), Number(nodes-1));
+            num[1] = getRndInteger(Number(0), Number(nodes-1));
+          }
+          else {
+            num[0] = getRndInteger(Number(1), Number(nodes));
+            num[1] = getRndInteger(Number(1), Number(nodes));
+          }
+
+          while(1) {
+            console.log("check0");
+            var flag = true;
+
+            if(num[0]==num[1]) {
+              console.log(num[0] + ' ' + num[1] + '\n');
+              flag = false;
+            }
+
+            for (item of s.values()) {
+              if((item[0] == num[0] && item[1] == num[1]) || (item[0] == num[1] && item[1]==num[0])) {
+                flag = false;
+                break;
+              }
+            }
+              if(flag) {
+                break;
+              }
+
+              else {
+                if(initnode == "0") {
+                  num[0] = getRndInteger(Number(0), Number(nodes-1));
+                  num[1] = getRndInteger(Number(0), Number(nodes-1));
+                }
+                else {
+                  num[0] = getRndInteger(Number(1), Number(nodes));
+                  num[1] = getRndInteger(Number(1), Number(nodes));
+                }
+              }
+
+          }
+
+          document.getElementById("outputTextArea").value +=
+            num[0] + " " + num[1] + "\n";
+            s.add(num);  
+        }
+        s.clear();
+      }
   }
-  else if(heading=="Random UnWeighted Graph")
-  {
-    var tc = document.getElementById("unweightedgNtc").value;
-    var tcflag = document.getElementById("unweightedgNtcflag").value;
-    var nodes = document.getElementById("unweightedgNodes").value;
-    var edges = document.getElementById("unweightedgEdges").value;
-    var NEFlag = document.getElementById("unweightedgNEflag").value;
-    var isdirectedflag=document.getElementById("unweightedgDirected").value;
-    var initnode= document.getElementById("unweightedgNodesStart").value;
+
+
+  else if(heading=="Random Directed Weighted Graph") {   
+    var tc = document.getElementById("dwgNtc").value;
+    var tcFlag = document.getElementById("dwgNtcflag").value;
+    var nodes = document.getElementById("dwgNodes").value;
+    var edges = document.getElementById("dwgEdges").value;
+    var NEFlag = document.getElementById("dwgNEflag").value;
+    var minw = document.getElementById("dwgMinWeight").value;
+    var maxw = document.getElementById("dwgMaxWeight").value;
+    //var isdirectedflag=document.getElementById("weightedgDirectedflag").value;
+    var initnode= document.getElementById("dwgNodeStart").value;
+ 
+    if((edges > (nodes*(nodes-1)))) {
+      console.log("These number of edges is not possible with given number of nodes, Try  again!");
+      var usethis = document.getElementById("invalidAlert");
+      if(usethis.classList.contains("d-none"))
+        usethis.classList.remove("d-none");
+      return;
+    }
+
+
+    if (tcFlag == "1") {
+      document.getElementById("outputTextArea").value += tc + "\n";
+      console.log("xyz");
+    }
+ var it, it2;
+ 
+      let s = new Set();
+      for (it = 0; it < tc; it++) {
+        if (NEFlag == "1")
+        {
+          document.getElementById("outputTextArea").value += nodes + " " + edges + "\n";
+         }
+
+        for (it2 = 0; it2 < edges; it2++) {
+              
+          var num = new Array(2);
+          var weight = getRndInteger(Number(minw), Number(maxw));
+          if(initnode == "0") {
+            num[0] = getRndInteger(Number(0), Number(nodes-1));
+            num[1] = getRndInteger(Number(0), Number(nodes-1));
+          }
+          else {
+            num[0] = getRndInteger(Number(1), Number(nodes));
+            num[1] = getRndInteger(Number(1), Number(nodes));
+          }
+
+
+          while(1) {
+            var flag = true;
+            if(num[0]==num[1]) {
+              console.log(num[0] + ' ' + num[1] + '\n');
+              flag = false;
+            }
+            for (item of s.values()) {
+              if((item[0] == num[0] && item[1]==num[1])) {
+                flag = false;
+                break;
+              }
+            }
+              if(flag) {
+                break;
+              }
+              else {
+                if(initnode == "0") {
+                  num[0] = getRndInteger(Number(0), Number(nodes-1));
+                  num[1] = getRndInteger(Number(0), Number(nodes-1));
+                }
+                else {
+                  num[0] = getRndInteger(Number(1), Number(nodes));
+                  num[1] = getRndInteger(Number(1), Number(nodes));
+                }
+              }
+
+          }
+
+          document.getElementById("outputTextArea").value +=
+            num[0] + " " + num[1] + " " + weight + "\n";
+            s.add(num);
+            
+        }
+        s.clear();
+      }
   }
+
+
+else if(heading=="Random Undirected Weighted Graph") {   
+    console.log("nero");
+    var tc = document.getElementById("udwgNtc").value;
+    var tcFlag = document.getElementById("udwgNtcflag").value;
+    var nodes = document.getElementById("udwgNodes").value;
+    var edges = document.getElementById("udwgEdges").value;
+    var NEFlag = document.getElementById("udwgNEflag").value;
+    //var isdirectedflag=document.getElementById("weightedgDirectedflag").value;
+    var minw = document.getElementById("udwgMinWeight").value;
+    var maxw = document.getElementById("udwgMaxWeight").value;
+    var initnode= document.getElementById("udwgNodeStart").value;
+ 
+    if((edges > (nodes*(nodes-1))/2)) {
+      console.log("These number of edges is not possible with given number of nodes, Try  again!");
+      var usethis = document.getElementById("invalidAlert");
+      if(usethis.classList.contains("d-none"))
+        usethis.classList.remove("d-none");
+      return;
+    }
+
+
+    if (tcFlag == "1") {
+      document.getElementById("outputTextArea").value += tc + "\n";
+      console.log("xyz");
+    }
+ var it, it2;
+ 
+      let s = new Set();
+      for (it = 0; it < tc; it++) {
+        if (NEFlag == "1")
+        {
+          document.getElementById("outputTextArea").value += nodes + " " + edges + "\n";
+         }
+
+        for (it2 = 0; it2 < edges; it2++) {
+              
+          var num = new Array(2);
+          var weight = getRndInteger(Number(minw), Number(maxw));
+          if(initnode == "0") {
+            num[0] = getRndInteger(Number(0), Number(nodes-1));
+            num[1] = getRndInteger(Number(0), Number(nodes-1));
+          }
+          else {
+            num[0] = getRndInteger(Number(1), Number(nodes));
+            num[1] = getRndInteger(Number(1), Number(nodes));
+          }
+
+          while(1) {
+            console.log("check0");
+            var flag = true;
+
+            if(num[0]==num[1]) {
+              console.log(num[0] + ' ' + num[1] + '\n');
+              flag = false;
+            }
+
+            for (item of s.values()) {
+              if((item[0] == num[0] && item[1] == num[1]) || (item[0] == num[1] && item[1]==num[0])) {
+                flag = false;
+                break;
+              }
+            }
+              if(flag) {
+                break;
+              }
+
+              else {
+                if(initnode == "0") {
+                  num[0] = getRndInteger(Number(0), Number(nodes-1));
+                  num[1] = getRndInteger(Number(0), Number(nodes-1));
+                }
+                else {
+                  num[0] = getRndInteger(Number(1), Number(nodes));
+                  num[1] = getRndInteger(Number(1), Number(nodes));
+                }
+              }
+
+          }
+
+          document.getElementById("outputTextArea").value +=
+            num[0] + " " + num[1] + " " + weight + "\n";
+            s.add(num);  
+        }
+        s.clear();
+      }
+  }
+
 }
-
+ 
 // document.getElementById("number").onclick = function () {
 //   var element = document.getElementById("number");
 //   element.classList.add("active");
 //   var element = document.getElementById("numberForm");
 //   element.classList.remove("d-none");
 // }
-
+ 
 // document.getElementById("simpleArray").onclick = function () {
 //   var element = document.getElementById("array");
 //   element.classList.add("active");
