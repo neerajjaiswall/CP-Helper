@@ -5,14 +5,16 @@ var forms = [
   "matrixForm",
   "simpleStringForm",
   "characterMatrixForm",
-  "unweightedTreeForm",
-  "weightedTreeForm",
+  // "unweightedTreeForm",
+  // "weightedTreeForm",
   "undirectedwGraphForm",
   "directedwGraphForm",
   "directedunwGraphForm",
   "undirectedunwGraphForm",
 ];
-var categories = ["number", "array", "string", "tree", "graph"];
+// var categories = ["number", "array", "string", "tree", "graph"];
+var categories = ["number", "array", "string","graph"];
+
 function showForm() {
   var anchorlink = arguments[0];
   // console.log(anchorlink);
@@ -60,16 +62,16 @@ function showForm() {
     categoryId = "string";
     heading = "Character Matrix";
   }
-  if (element == "weightedTree") {
-    formId = "weightedTreeForm";
-    categoryId = "tree";
-    heading = "Weighted Tree";
-  }
-  if (element == "unweightedTree") {
-    formId = "unweightedTreeForm";
-    categoryId = "tree";
-    heading = "Unweighted Tree";
-  }
+  // if (element == "weightedTree") {
+  //   formId = "weightedTreeForm";
+  //   categoryId = "tree";
+  //   heading = "Weighted Tree";
+  // }
+  // if (element == "unweightedTree") {
+  //   formId = "unweightedTreeForm";
+  //   categoryId = "tree";
+  //   heading = "Unweighted Tree";
+  // }
   if (element == "directedweightedGraph") {
     formId = "directedwGraphForm";
     categoryId = "graph";
@@ -101,7 +103,8 @@ function getRndInteger(min, max) {
 }
  
 function generateInput() {
- 
+
+try {
   var alertElement = document.getElementById("invalidAlert");
   if (!alertElement.classList.contains("d-none")) alertElement.classList.add("d-none");
  
@@ -755,7 +758,15 @@ else if(heading=="Random Undirected Weighted Graph") {
         s.clear();
       }
   }
+ }
 
+
+ catch(error) {
+    console.error(error);
+    var usethis = document.getElementById("invalidAlert");
+    if(usethis.classList.contains("d-none"))
+      usethis.classList.remove("d-none");
+ }
 }
  
 // document.getElementById("number").onclick = function () {
