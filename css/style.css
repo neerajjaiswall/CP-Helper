@@ -85,3 +85,23 @@ textarea {
   .show {
     display: block;
   }
+
+  footer{
+    background: rgb(0, 91, 143);
+}
+a:link{
+    color: #fff;
+    text-decoration: none;
+}
+a:visited{
+    color: #fff;
+    text-decoration: none;
+}
+a:hover{
+    color: #fff;
+    text-decoration: none;
+}
+a:active{
+    color: #fff;
+    text-decoration: none;
+}
